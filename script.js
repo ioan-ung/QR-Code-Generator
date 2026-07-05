@@ -6,19 +6,15 @@ let input;
 document.getElementById('button').addEventListener('click',()=>{
     input = document.getElementsByTagName('input')[0].value;
     card.style.display = 'none';
-    image.style.display = 'block';
-    image.style.position = 'absolute';
-    image.style.top = '50%';
-    image.style.left = '50%';
-    image.style.transform = 'translate(-50%,-50%)';
-    
-    document.getElementById('imageTitle').innerHTML = input;
-    document.getElementsByTagName('img')[0].src = path + input;
+    image.style.display = 'flex';
+
+    document.getElementById('imageTitle').textContent = input;
+    document.getElementsByTagName('img')[0].src = path + encodeURIComponent(input);
     
 })
 
 document.getElementById('svg').addEventListener('click',()=>{
     image.style.display = 'none';
-    card.style.display = 'block';
+    card.style.display = 'flex';
     document.getElementsByTagName('input')[0].value = '';
 })
